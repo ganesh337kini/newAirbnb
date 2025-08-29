@@ -1,0 +1,51 @@
+<% layout("/layouts/boilerplate") -%>
+<body>
+    <div class="row mt-5 mb-3" >
+            <div class="col col-8 offset-2">
+    <h2>Edit the content</h2>
+    </div></div>
+    <form method="POST" action="/listings/<%= list._id %>?_method=PUT" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col col-8 offset-2">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input name="listing[title]" type="text" placeholder="Add title" value="<%= list.title %>" class="form-control">
+                    <div class="valid-feedback">Title is proper</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <input name="listing[description]" type="text" placeholder="Add description" value="<%= list.description %>" class="form-control">
+                </div>
+                <p>The old image</p>
+                <img src="<%=originalurl%>">
+                <div class="mb-3">
+                    <label for="image" class="form-label">Upload new Image</label>
+                    <input name="listing[image]"  type="file"  placeholder="Add image URL"  class="form-control">
+                </div>
+               
+
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label for="price" class="form-label">Price</label>
+                        <input name="listing[price]" type="number" placeholder="Add price" value="<%= list.price %>" class="form-control">
+                    </div>
+
+                    <div class="col-md-8 mb-3">
+                        <label for="country" class="form-label">Country</label>
+                        <input name="listing[country]" type="text" placeholder="Add country" value="<%= list.country %>" class="form-control">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <input name="listing[location]" type="text" placeholder="Add location" value="<%= list.location %>" class="form-control">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Edit</button>
+            </div>
+        </div>
+    </form>
+
+    
+</body>

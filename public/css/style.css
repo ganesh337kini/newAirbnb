@@ -1,0 +1,90 @@
+body{
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container3{
+   flex:1;
+
+}
+.logo{
+   color: #FF5A5F;
+   height: 1.5rem;;
+   width: 1rem;
+}
+.container-fluid{
+    height: 4rem;
+    background-color: rgb(249, 245, 245);
+    font-size:1.2rem ;
+}
+.footer{
+    /* display: flex;
+    flex-wrap: wrap; */
+    background-color: rgba(244, 234, 234, 0.9);
+    width: 100%;
+    /* justify-content: center;
+    align-items: center; */
+    text-align: center;
+}
+.addnew{
+    text-align: center;
+    margin: 2rem;
+}
+.social i{
+    font-size: 1.5rem;
+    margin-right: 0.7rem;
+}
+.footerinfo a{
+    text-decoration: none;
+    margin-right: 0.5rem;
+}
+.footerinfo a:hover{
+    text-decoration:underline;
+}
+.company p{
+   display: flex;
+   justify-content: center;
+    align-items:center;
+}
+.social{
+    height: 4rem;;
+}
+.social,.company,.footerinfo{
+    width: 100%;
+ 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:center;
+}
+.listcontainer{
+    display: flex;
+    flex-wrap: wrap;
+}
+.imageshow img{
+    height:40vh;
+   width:60%;
+   margin-top:3.5rem;
+   margin-bottom: 2rem;
+   margin-top: 5rem;
+}
+.contentshow{
+    margin-top: 3rem;
+    width: 55%;
+}
+.btnshow{
+    display:flex;
+    margin-top: 3rem;
+     width: 50%;
+    justify-content: space-evenly;
+    /* margin-left: 19rem; */
+}
+.card-img-top{
+    margin-top:0.5rem;
+    height: 18rem;
+   
+}
+.like{
+    margin-left:18rem;
+}

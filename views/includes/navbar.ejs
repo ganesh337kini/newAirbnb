@@ -1,0 +1,74 @@
+<style>
+  .search {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 10px; 
+  margin-left:25rem;
+}
+.btnsearch{
+ border:none;
+  background-color: #FF5A5F;
+  color:white;
+
+   border-radius: 0px 8.5px 8.5px 0px;  
+}
+.btnsearch:hover{
+  background-color: #FF5A5F;
+  border:none;
+}
+.inputsearch{
+border:none;
+border-radius: 10px 0px 0px 10px;   
+   width:20rem;
+}
+</style>
+
+<nav class="navbar navbar-expand-md bg-body-tertiary border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand " href="/" style="color:#FF5A5F; font-size: 1.3rem;"><i class="fa-brands fa-airbnb logo " ></i>&nbsp; airbnb</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="/listings">Explore</a>
+        
+      </div>
+      <form class="form-inline my-2 my-lg-0">
+  <div class="search">
+    <div class="inputsearch">
+      <input class="form-control mr-sm-2"  id="searchBox" type="search" placeholder="Search">
+     
+    </div>
+    <div class="btnsearch">
+      <button class="btn my-2 my-sm-0" type="submit"> <i class="fa-brands fa-searchengin"></i>Search</button>
+    </div>
+  </div>
+</form>
+
+   </div>
+      <div class="navbar-nav ms-auto">
+         <a class="nav-link" href="/listings/new">Add listings</a>
+        
+        <%if(!curruser){%>
+        <a class="nav-link "  href="/signup">SignUp</a>
+        <a class="nav-link" href="/login">login</a>
+        <%}%>
+         <%if(curruser){%>
+        <a class="nav-link" href="/logout">logout</a>
+          <%}%>
+      </div>
+    </div>
+  </div>
+</nav>
+<script>
+  let search = document.getElementById('searchBox');
+  let submit = document.getElementsByClassName('btnsearch')[0];
+
+  submit.addEventListener("click", () => {
+    let query = search.value.trim();
+    if (query) {
+      window.location.href = "/search?query=" + encodeURIComponent(query);
+    }
+  });
+</script>

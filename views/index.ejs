@@ -1,0 +1,20 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2">
+        <% for (let list of alllistings) { %>
+            <div class="card" style="width:20rem; margin:3rem; border:solid 1.2px black;">
+               <div class="imag" >
+                <a href="/listings/<%= list._id %>">
+                    <img src="<%= list.image.url%>" class="card-img-top" alt="Image not found" style="width:18rem; ">
+                </a>
+                
+                <!-- <i class="fa-solid fa-heart like"></i> -->
+                </div>
+                <div class="card-body">
+                    <p><%= list.title %></p>
+                    <p class="card-price">&#8377;<%= list.price.toLocaleString("en-IN") %>/night</p>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</body>
